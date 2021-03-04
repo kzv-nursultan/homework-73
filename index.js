@@ -11,7 +11,9 @@ app.get('/encode/:name', (req, res)=>{
     res.send(Vigenere.Cipher('laptop').crypt(req.params.name));
 });
 
-app.get('')
+app.get('/decode/:name',(req,res)=>{
+    res.send(Vigenere.Decipher('laptop').crypt(req.params.name));
+});
 
 app.listen(port, ()=>{
     console.log('We are live on' + port);
